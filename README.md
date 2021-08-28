@@ -1,4 +1,11 @@
 # 3D-Point-Cloud-Rendering-with-Mitsuba
-  <img align="center" src="https://user-images.githubusercontent.com/34999814/131210917-3cb04fb7-5605-4289-86ff-dd87b116d73c.jpg" height="500">
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/34999814/131210917-3cb04fb7-5605-4289-86ff-dd87b116d73c.jpg" height="500">
+</p>
+  
+## 利用Open3D读取PLY格式点云，生成Mitsuba的XML场景配置文件，再由Mitsuba 0.6进行渲染。
 
-利用Open3D读取PLY格式点云，生成Mitsuba的XML场景配置文件，再由Mitsuba 0.6进行渲染。
+### 需要配置：
+ - Python 3+
+ - numpy
+ - open3d
