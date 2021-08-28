@@ -56,3 +56,5 @@ rgb name：顾名思义
 ### Mitsuba 0.6
 Mitsuba 2的编译始终没有成功，暂时使用有官方自己编译好的0.6版本
 [下载地址](https://www.mitsuba-renderer.org/download.html)
+
+将生成的XML文件在Mitsuba中打开再渲染即可。
