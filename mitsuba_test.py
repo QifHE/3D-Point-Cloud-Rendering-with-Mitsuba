@@ -1,7 +1,7 @@
 import numpy as np
 import open3d as o3d
 
-ply_path = "D:\\Codes\\ours\\dataset_test_only\\airplane\\1a04e3eab45ca15dd86060f189eb133\\00_partial.ply"
+ply_path = "你的PLY文件路径"
 
 def standardize_bbox(pcl, points_per_object):
     pt_indices = np.random.choice(pcl.shape[0], points_per_object, replace=False)
@@ -25,8 +25,8 @@ xml_head = \
         <float name="farClip" value="100"/>
         <float name="nearClip" value="0.1"/>
         <transform name="toWorld">
-            <translate x="0" y="-8.75" z="0"/>
-            <rotate x="1" y="0" z="0" angle="-60"/>
+            <translate x="0" y="0" z="0"/>
+            <rotate x="0" y="0" z="0" angle="0"/>
             <lookat origin="0,0,10" target="0,0,0" up="0,0,0"/>
         </transform>
         <float name="fov" value="25"/>
@@ -92,7 +92,7 @@ def colormap(x,y,z):
     vec = np.clip(vec, 0.001,1.0)
     norm = np.sqrt(np.sum(vec**2))
     vec /= norm
-    return [vec[0], vec[1], vec[2]]
+    return [vec[0], vec[1], vec[2]] # 输出的是（R,G,B）在 [0,1] 区间
 
 def mitsuba(pcl, path, clr=None):
     xml_segments = [xml_head]
@@ -100,6 +100,7 @@ def mitsuba(pcl, path, clr=None):
     # pcl = standardize_bbox(pcl, 2048)
     pcl = pcl[:,[2,0,1]] # 把物体水平放到平面上
     
+    # 旋转变化
     theta_X = np.radians(-10) 
     theta_Y = np.radians(-30) 
     theta_Z = np.radians(80) 
@@ -123,6 +124,7 @@ def mitsuba(pcl, path, clr=None):
     pcl = np.dot(translation_Z, pcl) 
     pcl = pcl.transpose(1,0)
     
+    # 三个轴方向上的翻转
     pcl[:, 0] *= -1
     pcl[:, 1] *= 1
     pcl[:, 2] *= 1
@@ -131,8 +133,7 @@ def mitsuba(pcl, path, clr=None):
 
     for i in range(pcl.shape[0]):
         if clr == None:
-            color = colormap(0.5, 0.5, 0.5) # 灰色
-            #color = colormap(pcl[i,0]+0.5,pcl[i,1]+0.5,pcl[i,2]+0.5)
+            color = colormap(pcl[i,0]+0.5,pcl[i,1]+0.5,pcl[i,2]+0.5) # 依据点坐标的渐变色
         else: 
             color = clr
         if h < -0.25:
@@ -150,7 +151,7 @@ if __name__ == '__main__':
     print("Load a ply point cloud, print it, and render it")
     pts = o3d.io.read_point_cloud(ply_path)
     pts = np.asarray(pts.points)
-    path = "D:\\Codes\\ours\\dataset_test_only\\airplane\\1a04e3eab45ca15dd86060f189eb133\\00_partial.xml"
+    path = "XML文件保存路径"
     mitsuba(pts, path)
 
 
