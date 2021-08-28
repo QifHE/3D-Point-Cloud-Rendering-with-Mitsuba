@@ -18,7 +18,7 @@
 ### 参数设置：
 在mitsuba_test.py中：
 
-'''
+```
 <float name="farClip" value="100"/>
 <float name="nearClip" value="0.1"/>
 <transform name="toWorld">
@@ -27,7 +27,7 @@
     <lookat origin="0,0,10" target="0,0,0" up="0,0,0"/>
 </transform>
 <float name="fov" value="25"/>
-'''
+```
 上块调整相机视野：
 farClip和nearClip：限制场景景深
 translate：顾名思义
@@ -36,8 +36,7 @@ lookat origin：相机所处位置
 target：相机正对的坐标
 up：""中填写1代表这个方向是“上”方向
 fov：顾名思义
-
-'''
+```
 <shape type="rectangle">
     <transform name="toWorld">
         <scale x="10" y="10" z="1"/>
@@ -47,9 +46,13 @@ fov：顾名思义
         <rgb name="radiance" value="6,6,6"/>
     </emitter>
 </shape>
-'''
+```
 上块调整光照：
 shape type：顾名思义
 scale：顾名思义
 lookat origin：顾名思义
 rgb name：顾名思义
+
+### Mitsuba 0.6
+Mitsuba 2的编译始终没有成功，暂时使用有官方自己编译好的0.6版本
+[下载地址](https://www.mitsuba-renderer.org/download.html)
