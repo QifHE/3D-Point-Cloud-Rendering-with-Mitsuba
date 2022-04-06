@@ -3,7 +3,7 @@
   <img src="https://user-images.githubusercontent.com/34999814/131210917-3cb04fb7-5605-4289-86ff-dd87b116d73c.jpg" height="500">
 </p>
   
-
+**English Version will be added Soon.**
 
 **批量利用Open3D读取PLY格式点云，生成Mitsuba的XML场景配置文件，再由Mitsuba2进行渲染。**
 [利用Mitsuba 0.6的版本](https://github.com/QifHE/3D-Point-Cloud-Rendering-with-Mitsuba/blob/main/README_old.md)
