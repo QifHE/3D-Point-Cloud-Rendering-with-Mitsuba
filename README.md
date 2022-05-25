@@ -1,6 +1,6 @@
 # 3D Point Cloud Rendering with Mitsuba and Batch Processing
 
-## May 24th, 2022 updated with brand-new pipeline design!
+## May 24th, 2022 updated with a brand-new pipeline design!
 <img src="https://github.com/QifHE/3D-Point-Cloud-Rendering-with-Mitsuba/blob/main/imgs/RenderingPipeline.png?raw=true" style="width:100%"/>
 
 ## Introduction
