@@ -5,7 +5,7 @@
 
 ## Introduction
 
-This repository provides a tool that automatically renders all of your selected point cloud files into visually stunning images by using Mitsuba2. You can simply input one-line command, and then the code will generate all images, before concatenating them into a single image which will be suitable to be put in your academic papers. Moreover, each submodule of the tool can be used independently to deal with corresponding tasks. 
+This repository provides a tool that automatically renders all of your selected point cloud files into visually stunning images by using Mitsuba 2. You can simply input one-line command, and then the code will generate all images, before concatenating them into a single image which will be suitable to be put in your academic papers. Moreover, each submodule of the tool can be used independently to deal with corresponding tasks. 
 
 ---
 
