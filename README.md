@@ -87,7 +87,7 @@ jpg_quality = 85
 ```
 ### Point Cloud File Directary Stucture
 
-If you want to only process the **selected categories**, the code will assume that your Point Cloud File Directary Stucture look similar to this:
+If you want to only process the **selected categories**, the code will assume that your Point Cloud File Directary Stucture looks similar to this:
 ```
 Dataset Root
 └───airplane
